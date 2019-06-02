@@ -26,33 +26,33 @@
           :alt="result.original_title"
           class="poster-image"
         >
-        <!-- TODO: Combine base URL with poster_path value in data to make the image src URL (Hint: Use v-bind.). -->
+        <!-- Combine base URL with poster_path value in data to make the image src URL using v-bind-->
         <h2 class="title">
           <a :href="'https://www.themoviedb.org/movie/' + result.id">{{result.original_title}}</a>
         </h2>
-        <!-- TODO: Combine base URL with movie ID value in data to make the link href URL (Hint: Use v-bind.). -->
+        <!-- Combine base URL with movie ID value in data to make the link href URL using v-bind -->
         <div class="ratings">
           <span class="rating-category critics-choice" v-if="result.vote_average > 8">Critic's Choice</span>
-          <!-- TODO: Use a conditional to determine if the vote_average is over 8. -->
+          <!-- Use a conditional to determine if the vote_average is over 8. -->
           <span class="rating-category well-liked" v-if="result.vote_average > 7 && result.vote_average < 8 ">Well Liked</span>
-          <!-- TODO: Use a conditional to determine if the vote_average is between 7 and 8. -->
+          <!-- Use a conditional to determine if the vote_average is between 7 and 8. -->
           <span class="rating-category stinker" v-if="result.vote_average < 7 " >Stinker</span>
-          <!-- TODO: Use a conditional to determine if the vote_average is under 7. -->
+          <!-- Use a conditional to determine if the vote_average is under 7. -->
           <span class="vote-average">{{result.vote_average}}</span> with
           <span class="vote-count">{{result.vote_count}}</span> votes
-          <!-- TODO: Fill in the vote_average and vote_count values accordingly. -->
+          
         </div>
         <p class="overview">
-          <!-- TODO: Fill in the movie overview from the data. -->
+          
          {{result.overview}}
          
          </p>
         <p class="release-date">Original Release: {{new Date(result.release_date).toLocaleDateString("en-US")}}</p>
-        <!-- TODO: Fill in the release date from the data. -->
+        
         <ul class="genre-list">
-          <!-- TODO: Use a loop to iterate through all of the genres for this movie. -->
+          <!-- Use a loop to iterate through all of the genres for this movie. -->
           <li v-for="(genre, index) in result.genres" :key="index">{{genre}}</li>
-          <!-- TODO: Fill in the genre name from the data. -->
+          
         </ul>
       </li>
     </ul>
